@@ -1,6 +1,6 @@
 ## API Gateway using GraphQL
 
-####Note:
+#### Note:
 - Run User and Reward Service first then access them using API Gateway
 - [User API](https://github.com/azamwahaj/user-api)
 - [Reward API](https://github.com/azamwahaj/reward-api)
