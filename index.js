@@ -62,18 +62,22 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
+    // get single user call from web
     getUserWeb: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8081/api/v1/user/${id}/`);
       return response.json();
     },
+    // get single user call from mobile
     getUserMobile: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8081/api/v1/user/${id}/`);
       return response.json();
     },
+    // get single reward call from web
     getRewardWeb: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8082/api/v1/reward/${id}/`);
       return response.json();
     },
+    // get single reward call from mobile
     getRewardMobile: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8082/api/v1/reward/${id}/`);
       return response.json();
