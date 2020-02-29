@@ -3,8 +3,10 @@ const fetch = require("node-fetch");
 
 const typeDefs = `
   type Query {
-    getUser(id: Int!): User
-    getReward(id: Int!): Reward
+    getUserWeb(id: Int!): User
+    getUserMobile(id: Int!): User
+    getRewardWeb(id: Int!): Reward
+    getRewardMobile(id: Int!): Reward
   }
   
   type UserRewards {
@@ -60,11 +62,19 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    getUser: async (_, { id }) => {
+    getUserWeb: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8081/api/v1/user/${id}/`);
       return response.json();
     },
-    getReward: async (_, { id }) => {
+    getUserMobile: async (_, { id }) => {
+      const response = await fetch(`http://192.168.99.101:8081/api/v1/user/${id}/`);
+      return response.json();
+    },
+    getRewardWeb: async (_, { id }) => {
+      const response = await fetch(`http://192.168.99.101:8082/api/v1/reward/${id}/`);
+      return response.json();
+    },
+    getRewardMobile: async (_, { id }) => {
       const response = await fetch(`http://192.168.99.101:8082/api/v1/reward/${id}/`);
       return response.json();
     }

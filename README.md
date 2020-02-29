@@ -19,9 +19,35 @@ npm start
 ```
 Endpoint: http://localhost:4000/
 
+Request from Web:
 Query:
 {
-  getUser(id: 1) {
+  getUserWeb(id: 1) {
+    success
+    data {
+      id
+      name
+      email
+      phone
+      country
+      created_at
+      updated_at
+      rewards {
+        id
+        name
+        amount
+        expiry_date
+        created_at
+        updated_at
+      }
+    }
+  }
+}
+
+Request from Mobile:
+Query:
+{
+  getUserMobile(id: 1) {
     success
     data {
       id
@@ -49,9 +75,35 @@ Query:
 ```
 Endpoint: http://localhost:4000/
 
+Request from Web:
 Query:
 {
-  getReward(id: 3) {
+  getRewardWeb(id: 3) {
+    success
+    data {
+      id
+      name
+      amount
+      expiry_date
+      created_at
+      updated_at
+      users {
+        id
+        name
+        email
+        phone
+        country
+        created_at
+        updated_at
+      }
+    }
+  }
+}
+
+Request from Mobile:
+Query:
+{
+  getRewardMobile(id: 3) {
     success
     data {
       id
